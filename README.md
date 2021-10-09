@@ -16,13 +16,11 @@ Key | Description
 --- | ---
 `PROXY_PORT` | Port number listening proxy requests
 
-#### HTTPS GET /proxy
+#### WSS
 
-Establish a proxy connection.
-
-Header | Description
---- | ---
-`Homeway-Public-Port` | Public port number of an application
+Path | Headers | Description
+--- | --- | ---
+`/proxy` | `Homeway-Public-Port`: Public port number of an application | Establish a proxy connection.
 
 ### Client
 
