@@ -8,11 +8,11 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/mizuochikeita/homeway/di/server"
+	"github.com/mizuochikeita/homeway/server/di"
 )
 
 func main() {
-	dc := &server.Container{}
+	dc := &di.Container{}
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
 	s := dc.Server()

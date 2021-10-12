@@ -1,10 +1,10 @@
-package server
+package di
 
 import (
 	"net"
 	"net/http"
 
-	"github.com/mizuochikeita/homeway/infra/http/server"
+	hshttp "github.com/mizuochikeita/homeway/server/infra/http"
 )
 
 type Container struct {
@@ -20,5 +20,5 @@ func (c *Container) Server() *http.Server {
 }
 
 func (*Container) ProxyHandler() http.Handler {
-	return server.ProxyHandler()
+	return hshttp.ProxyHandler()
 }
