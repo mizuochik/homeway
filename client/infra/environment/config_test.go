@@ -1,4 +1,4 @@
-package client_test
+package environment_test
 
 import (
 	"net/url"
@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/mizuochikeita/homeway/infra/config/client"
+	"github.com/mizuochikeita/homeway/client/infra/environment"
 )
 
 func TestConfig(t *testing.T) {
@@ -22,11 +22,11 @@ func TestConfig(t *testing.T) {
 				os.Unsetenv(k)
 			}
 		}()
-		got, err := client.ReadFromEnv()
+		got, err := environment.ReadFromEnv()
 		if err != nil {
 			t.Fatal(err)
 		}
-		want := &client.Config{
+		want := &environment.Config{
 			ServerURL: &url.URL{
 				Scheme: "https",
 				Host:   "homeway-server",

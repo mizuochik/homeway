@@ -1,4 +1,4 @@
-package client
+package environment
 
 import (
 	"errors"
