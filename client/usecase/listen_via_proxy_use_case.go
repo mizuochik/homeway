@@ -9,10 +9,10 @@ type ListenViaProxy interface {
 }
 
 type listenViaProxy struct {
-	client Client
+	client HomewayServerClient
 }
 
-func NewListenViaProxy(client Client) ListenViaProxy {
+func NewListenViaProxy(client HomewayServerClient) ListenViaProxy {
 	return &listenViaProxy{
 		client: client,
 	}
