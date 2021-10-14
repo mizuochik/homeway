@@ -22,5 +22,9 @@ func (c *Container) Config() *environment.Config {
 }
 
 func (c *Container) ListenViaProxy() usecase.ListenViaProxy {
-	return usecase.NewListenViaProxy()
+	return usecase.NewListenViaProxy(c.Client())
+}
+
+func (c *Container) Client() usecase.Client {
+	return nil
 }

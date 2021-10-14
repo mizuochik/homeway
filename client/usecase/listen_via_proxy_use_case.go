@@ -9,10 +9,13 @@ type ListenViaProxy interface {
 }
 
 type listenViaProxy struct {
+	client Client
 }
 
-func NewListenViaProxy() ListenViaProxy {
-	return &listenViaProxy{}
+func NewListenViaProxy(client Client) ListenViaProxy {
+	return &listenViaProxy{
+		client: client,
+	}
 }
 
 func (uc *listenViaProxy) Run(ctx *context.Context) error {
