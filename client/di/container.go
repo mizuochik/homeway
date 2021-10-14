@@ -1,6 +1,9 @@
 package di
 
-import "github.com/mizuochikeita/homeway/client/infra/environment"
+import (
+	"github.com/mizuochikeita/homeway/client/infra/environment"
+	"github.com/mizuochikeita/homeway/client/usecase"
+)
 
 type Container struct {
 	ConfigCache *environment.Config
@@ -16,4 +19,8 @@ func (c *Container) Config() *environment.Config {
 	}
 	c.ConfigCache = conf
 	return c.Config()
+}
+
+func (c *Container) ListenViaProxy() usecase.ListenViaProxy {
+	return usecase.NewListenViaProxy()
 }
